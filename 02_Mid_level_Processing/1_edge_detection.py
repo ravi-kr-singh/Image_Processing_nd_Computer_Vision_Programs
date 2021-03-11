@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt  
  
  
-image = cv.imread("C:/Users/imrk0/Desktop/CV/0_img/board.png",1)
+image = cv.imread("C:/Users/imrk0/Desktop/CV/00_img/board.png",1)
 cann=cv.Canny(image,200,400)
  
  

@@ -2,8 +2,8 @@ import cv2
 import numpy as np
 from matplotlib import pyplot as plt
 
-img=cv2.imread('C:/Users/imrk0/Desktop/CV/0_img/leaf.jpg',cv2.IMREAD_GRAYSCALE)
-original_img = cv2.imread('C:/Users/imrk0/Desktop/CV/0_img/leaf.jpg',cv2.IMREAD_COLOR)
+img=cv2.imread('C:/Users/imrk0/Desktop/CV/00_img/leaf.jpg',cv2.IMREAD_GRAYSCALE)
+original_img = cv2.imread('C:/Users/imrk0/Desktop/CV/00_img/leaf.jpg',cv2.IMREAD_COLOR)
 original_img_copy = original_img.copy()
  
 kernel = np.array([[-1,-1,-1],[-1,8,-1],[-1,-1,-1]])

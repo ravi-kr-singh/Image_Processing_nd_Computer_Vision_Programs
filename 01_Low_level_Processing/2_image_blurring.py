@@ -1,7 +1,7 @@
 import cv2 as cv
 import numpy as np 
 import matplotlib.pyplot as plt  
-image = cv.imread('C:/Users/imrk0/Desktop/CV/0_img/flower.PNG',1)
+image = cv.imread('C:/Users/imrk0/Desktop/CV/00_img/flower.PNG',1)
 RGB_img = cv.cvtColor(image, cv.COLOR_BGR2RGB)
 # Gaussian Blur 
 Gaussian = cv.GaussianBlur(image.copy(), (7, 7), 0)

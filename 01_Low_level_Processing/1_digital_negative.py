@@ -1,7 +1,7 @@
 import cv2 
 from matplotlib import pyplot as plt
 
-img = cv2.imread('C:/Users/imrk0/Desktop/CV/0_img/tree.jpg',0) 
+img = cv2.imread('C:/Users/imrk0/Desktop/CV/00_img/tree.jpg',0) 
 cv2.imshow('original', img)
 im=img.copy()
 x,y= img.shape[:2]

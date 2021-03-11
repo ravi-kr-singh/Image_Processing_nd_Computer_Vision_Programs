@@ -48,8 +48,8 @@ def regionGrow(img,seeds,thresh,p = 1):
  return seedMark
 
 
-img = cv2.imread('C:/Users/imrk0/Desktop/CV/0_img/img6.webp',0)
-original_img = cv2.imread("C:/Users/imrk0/Desktop/CV/0_img/img6.webp",1)
+img = cv2.imread('C:/Users/imrk0/Desktop/CV/00_img/img6.webp',0)
+original_img = cv2.imread("C:/Users/imrk0/Desktop/CV/00_img/img6.webp",1)
 original_img = cv2.cvtColor(original_img,cv2.COLOR_BGR2RGB)
 
 seeds = [Point(10,10),Point(303,223),Point(315,198),Point(168,226)]

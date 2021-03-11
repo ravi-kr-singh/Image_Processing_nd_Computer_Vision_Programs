@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 from matplotlib import cm, pyplot as plt
 
-square=cv2.imread('C:/Users/imrk0/Desktop/CV/0_img/bridge2.jpg')
+square=cv2.imread('C:/Users/imrk0/Desktop/CV/00_img/bridge2.jpg')
 
 v = np.array([[-1,2,-1],[-1,2,-1],[-1,2,-1]])
 h = np.array([[-1,-1,-1],[2,2,2],[-1,-1,-1]])

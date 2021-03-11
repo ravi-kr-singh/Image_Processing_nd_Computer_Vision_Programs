@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt 
 import math
  
-img=cv.imread('C:/Users/imrk0/Desktop/CV/0_img/building.jpg',1)
+img=cv.imread('C:/Users/imrk0/Desktop/CV/00_img/building.jpg',1)
  
 ret,thresh=cv.threshold(img.copy(),38,255,cv.THRESH_BINARY)
 canny = cv.Canny(thresh, 100, 200)

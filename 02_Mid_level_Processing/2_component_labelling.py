@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-img=cv2.imread("C:/Users/imrk0/Desktop/CV/0_img/sample6.PNG",0)
+img=cv2.imread("C:/Users/imrk0/Desktop/CV/00_img/sample6.PNG",0)
 cv2.imshow("Original",img)
 img = cv2.threshold(img,0,255,cv2.THRESH_BINARY)[1]
 num_labels, labels = cv2.connectedComponents(img)
