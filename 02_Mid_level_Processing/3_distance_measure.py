@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt 
 import math
  
-img=cv.imread('C:/Users/imrk0/Desktop/CV/00_img/building.jpg',1)
+img=cv.imread('C:/Users/imrk0/Desktop/Github/Image_Processing_nd_Computer_Vision_Programs/00_img/building.jpg',1)
  
 ret,thresh=cv.threshold(img.copy(),38,255,cv.THRESH_BINARY)
 canny = cv.Canny(thresh, 100, 200)
@@ -31,7 +31,7 @@ for corner in corners:
             break
         
 # cv.imshow('canny', canny)
-cv.line(img,(x1,y1),(x2,y2),[255,0,0],4,lineType=cv.LINE_AA)
+cv.line(img,(x1,y1),(x2,y2),[0,0,0],2,lineType=cv.LINE_AA)
  
 mandis=abs(x2-x1) + abs(y2-y1)
 euclidean=int(math.sqrt((x2-x1)**2 + (y2-y1)**2))

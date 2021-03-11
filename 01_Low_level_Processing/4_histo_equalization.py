@@ -1,7 +1,7 @@
 import cv2 
 from matplotlib import pyplot as plt
  
-img = cv2.imread("C:/Users/imrk0/Desktop/CV/00_img/random.PNG",0) 
+img = cv2.imread("C:/Users/imrk0/Desktop/Github/Image_Processing_nd_Computer_Vision_Programs/00_img/random.PNG",0) 
 cv2.imshow('Original', img)
 plot1 = plt.figure("Original")
 plt.hist(img.flatten(),256,[0,256], color = 'r')

@@ -3,8 +3,8 @@ from matplotlib import pyplot as plt
 import matplotlib.cm as cm
 
 
-img = cv2.imread("C:/Users/imrk0/Desktop/CV/00_img/img4.jpg",0) 
-original_img = cv2.imread("C:/Users/imrk0/Desktop/CV/00_img/img4.jpg",1)
+img = cv2.imread("C:/Users/imrk0/Desktop/Github/Image_Processing_nd_Computer_Vision_Programs/00_img/img4.jpg",0) 
+original_img = cv2.imread("C:/Users/imrk0/Desktop/Github/Image_Processing_nd_Computer_Vision_Programs/00_img/img4.jpg",1)
 original_img = cv2.cvtColor(original_img,cv2.COLOR_BGR2RGB)
 
 plot1 = plt.figure("Histogram of Original Image")

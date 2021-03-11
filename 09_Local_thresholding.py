@@ -16,7 +16,7 @@ def global_thresholding(img):
     return Mean
     
 
-img = cv2.imread("C:/Users/imrk0/Desktop/CV/00_img/img14.png")
+img = cv2.imread("C:/Users/imrk0/Desktop/Github/Image_Processing_nd_Computer_Vision_Programs/00_img/img14.png")
 
 img = cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
 orignal_img = img
