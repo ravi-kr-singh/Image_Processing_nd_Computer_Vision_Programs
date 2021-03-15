@@ -3,42 +3,35 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 
-def global_thresholding(img):    
+def local_thresholding(img,img_new, C):    
     x,y= img.shape[:2]
-    sum = 0
     count = 0
-    for i in range(x):
-        for j in range(y):
-            sum = sum + img[i,j]
-            count = count + 1
+    for i in range(1,x-1):
+        for j in range(1,y-1):
+            neighbour_sum = int(img[i-1,j-1])+int(img[i-1,j])+int(img[i-1,j+1])+int(img[i,j-1])+int(img[i,j+1])+int(img[i+1,j-1])+int(img[i+1,j])+int(img[i+1,j+1])
+            neighbour_mean = int(neighbour_sum / 8)
+            t = neighbour_mean - C
+            if t<0 :
+                t = 0
+            if img[i,j]<= t :
+                img_new[i,j] = 0
+            else :
+                img_new[i,j] = 255
+            
 
-    Mean = int(sum/count)        
-    return Mean
-    
-
-img = cv2.imread("C:/Users/imrk0/Desktop/Github/Image_Processing_nd_Computer_Vision_Programs/00_img/img14.png")
+img = cv2.imread("00_img/img_04.jpg")
 
 img = cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
-orignal_img = img
+
 gray = cv2.cvtColor(img,cv2.COLOR_RGB2GRAY)
-img = cv2.resize(gray,(850,1179))
-
-x,y=img.shape
-
-th1= global_thresholding(img[0:int(x/2), 0:int(y/2)])
-th2= global_thresholding(img[0:int(x/2), int(y/2):y])
-th3= global_thresholding(img[int(x/2):x, 0:int(y/2)])
-th4= global_thresholding(img[int(x/2):x, int(y/2):y])
-
-print("Threshold values for 4 subregions are- ",th1," ",th2," ",th3," ",th4)
-
-ret1, img[0:int(x/2), 0:int(y/2)] = cv2.threshold(img[0:int(x/2), 0:int(y/2)], th1, 255, cv2.THRESH_BINARY)
-ret1, img[0:int(x/2), int(y/2):y] = cv2.threshold(img[0:int(x/2), int(y/2):y], th2, 255, cv2.THRESH_BINARY)
-ret1, img[int(x/2):x, 0:int(y/2)] = cv2.threshold(img[int(x/2):x, 0:int(y/2)], th3, 255, cv2.THRESH_BINARY)
-ret1, img[int(x/2):x, int(y/2):y] = cv2.threshold(img[int(x/2):x, int(y/2):y], th4, 255, cv2.THRESH_BINARY)
+x,y= img.shape[:2]
+img = cv2.resize(gray,(y,x))
+orignal_img = img.copy()
+local_thresholding(orignal_img,img,5)
 
 plot1 = plt.figure("Original")
-plt.imshow(orignal_img)
+plt.imshow(orignal_img,cmap=cm.gray)
 plot2 = plt.figure("Segmented image : ")
 plt.imshow(img,cmap=cm.gray)
 plt.show()
+
